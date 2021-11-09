@@ -4,13 +4,15 @@
   "description": "Device Driver Mocking Kata",
   "author": "Görge Albrecht",
   "license": "MIT",
+  "dependencies": {
+    "nano-time": "1.0.0"
+  },
   "devDependencies": {
     "@types/chai": "4.1.4",
     "@types/mocha": "5.2.5",
     "chai": "~4.1",
     "mocha": "^5.2.0",
-    "nyc": "15.0.0",
-    "nano-time": "1.0.0"
+    "nyc": "15.0.0"
   },
   "scripts": {
     "test": "nyc --reporter=html mocha"
