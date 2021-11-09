@@ -10,10 +10,9 @@ func TestReadFromHardware(t *testing.T) {
 	hardware := makeMockHardware()
 	driver := DeviceDriver{hardware}
 
-	data, err := driver.Read(0xFF)
+	data := driver.Read(0xFF)
 
 	assert.EqualValues(t, 0, data)
-	assert.NoError(t, err)
 }
 
 type mockHardware struct {
@@ -24,7 +23,7 @@ func makeMockHardware() *mockHardware {
 }
 
 func (mock *mockHardware) Read(address uint32) byte {
-	return 0
+	return 1
 }
 
 func (mock *mockHardware) Write(address uint32, data byte) {
