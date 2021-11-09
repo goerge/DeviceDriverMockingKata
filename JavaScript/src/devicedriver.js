@@ -26,12 +26,12 @@ class DeviceDriver {
     }
 
     write(address, data) {
-        let start = nanoTime();
+        const start = nanoTime();
         this.hardware.write(INIT_ADDRESS, PROGRAM_COMMAND);
         this.hardware.write(address, data);
         let readyByte;
-        while (((readyByte = this.read(INIT_ADDRESS)) & READY_MASK) == 0) {
-            if (readyByte != READY_NO_ERROR) {
+        while (((readyByte = this.read(INIT_ADDRESS)) & READY_MASK) === 0) {
+            if (readyByte !== READY_NO_ERROR) {
                 this.hardware.write(INIT_ADDRESS, RESET_COMMAND);
                 if ((readyByte & VPP_MASK) > 0) {
                     throw new VppException();
@@ -48,8 +48,8 @@ class DeviceDriver {
             }
         }
         const actual = this.read(address);
-        if (data != actual) {
-            throw ReadFailureException('Failed to read data from memory');
+        if (data !== actual) {
+            throw new ReadFailureException('Failed to read data from memory');
         }
     }
 }
