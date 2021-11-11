@@ -1,4 +1,4 @@
-import { nanoseconds as nanoTime } from "nano-time";
+import * as nanoseconds from "nano-time";
 import { FlashMemoryDevice } from "./flashmemorydevice";
 
 const INIT_ADDRESS = 0x00;
@@ -29,7 +29,7 @@ export class DeviceDriver {
     }
 
     public write(address: number, data: number): void {
-        const start = nanoTime();
+        const start = nanoseconds();
         this.hardware.write(INIT_ADDRESS, PROGRAM_COMMAND);
         this.hardware.write(address, data);
         let readyByte;
@@ -46,7 +46,7 @@ export class DeviceDriver {
                     throw new ProtectedBlockException();
                 }
             }
-            if (nanoTime() - start > TIMEOUT_THRESHOLD) {
+            if (nanoseconds() - start > TIMEOUT_THRESHOLD) {
                 throw new TimeoutException("Timeout when trying to read data from memory");
             }
         }
