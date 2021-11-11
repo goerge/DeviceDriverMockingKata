@@ -7,7 +7,14 @@
     <target name="clean" description="Remove all downloaded files">
         <delete includeEmptyDirs="true" defaultexcludes="false" quiet="true">
             <!-- NPM -->
+            <fileset dir="JavaScript/.nyc_output" />
+            <fileset dir="JavaScript/coverage" />
             <fileset dir="JavaScript/node_modules" />
+            <fileset dir="TypeScript/.nyc_output" />
+            <fileset dir="TypeScript/coverage" />
+            <fileset dir="TypeScript/node_modules" />
+            <!-- Composer -->
+            <fileset dir="PHP/vendor" />
             <!-- Maven -->
             <fileset dir="Java/target" />
             <!-- Eclipse files -->
@@ -32,6 +39,8 @@
                 <exclude name="build.sh" />
                 <exclude name="build.xml" />
                 <exclude name="**/*.bak" />
+                <exclude name="**/ignore*.*" />
+                <exclude name="**/Ignore*.*" />
                 <!-- ignore classes -->
                 <exclude name="Java/target/" />
                 <!-- ignore git -->
@@ -41,8 +50,10 @@
                 <exclude name="**/.idea/" />
                 <exclude name="**/*.iml" />
                 <!-- ignore JavaScript build outputs -->
-                <exclude name="JavaScript/coverage/" />
                 <exclude name="JavaScript/.nyc_output/" />
+                <exclude name="JavaScript/coverage/" />
+                <exclude name="TypeScript/.nyc_output/" />
+                <exclude name="TypeScript/coverage/" />
             </zipfileset>
          </zip>
     </target>
