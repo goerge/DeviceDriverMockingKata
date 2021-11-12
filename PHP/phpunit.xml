@@ -7,7 +7,7 @@
 	beStrictAboutChangesToGlobalState="true"
 	beStrictAboutOutputDuringTests="true"
 	beStrictAboutResourceUsageDuringSmallTests="true"
-	beStrictAboutTestsThatDoNotTestAnything="true"
+	beStrictAboutTestsThatDoNotTestAnything="false"
 	beStrictAboutTodoAnnotatedTests="true"
 	beStrictAboutCoversAnnotation="true"
     convertErrorsToExceptions="true"

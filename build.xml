@@ -16,6 +16,7 @@
             <fileset dir="TypeScript_Jest/coverage" />
             <fileset dir="TypeScript_Jest/node_modules" />
             <!-- Composer -->
+            <fileset dir="PHP/coverage" />
             <fileset dir="PHP/vendor" />
             <!-- Maven -->
             <fileset dir="Java/target" />
@@ -51,6 +52,8 @@
                 <!-- ignore idea -->
                 <exclude name="**/.idea/" />
                 <exclude name="**/*.iml" />
+                <!-- ignore PHP build outputs -->
+                <exclude name="PHP/coverage/" />
                 <!-- ignore JavaScript build outputs -->
                 <exclude name="JavaScript/.nyc_output/" />
                 <exclude name="JavaScript/coverage/" />
