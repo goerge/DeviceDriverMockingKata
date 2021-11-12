@@ -13,6 +13,8 @@
             <fileset dir="TypeScript/.nyc_output" />
             <fileset dir="TypeScript/coverage" />
             <fileset dir="TypeScript/node_modules" />
+            <fileset dir="TypeScript_Jest/coverage" />
+            <fileset dir="TypeScript_Jest/node_modules" />
             <!-- Composer -->
             <fileset dir="PHP/vendor" />
             <!-- Maven -->
@@ -54,6 +56,7 @@
                 <exclude name="JavaScript/coverage/" />
                 <exclude name="TypeScript/.nyc_output/" />
                 <exclude name="TypeScript/coverage/" />
+                <exclude name="TypeScript_Jest/coverage/" />
             </zipfileset>
          </zip>
     </target>

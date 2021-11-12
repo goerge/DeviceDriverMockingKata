@@ -18,5 +18,9 @@ cd TypeScript
 call npm install
 cd ..
 
+cd TypeScript_Jest
+call npm install
+cd ..
+
 call ant zip
 rem call ant clean

@@ -1,0 +1,24 @@
+{
+  "name": "devicedriver",
+  "version": "1.0.0",
+  "description": "Device Driver Mocking Kata",
+  "author": "Peter 'Code Cop' Kofler",
+  "license": "MIT",
+  "dependencies": {
+    "nano-time": "1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.0",
+    "@types/node": "^10.0.0",
+    "jest": "^27.0.0",
+    "ts-jest": "^27.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "build": "tsc",
+    "test:unit": "jest",
+    "test:coverage": "jest --coverage"
+  }
+}
