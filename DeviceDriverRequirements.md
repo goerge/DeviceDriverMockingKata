@@ -39,4 +39,4 @@ When you want to read data from the device:
 Credits
 -------
 
-This kata is based on the [Device Driver Kata](https://github.com/emilybache/Device-Driver-Kata) by [Emily Bache](https://github.com/emilybache). The Java production code is based on [HÃ©ctor Hugo Barriuso Matas](https://github.com/hbarriuso) [solution](https://github.com/hbarriuso/Device-Driver-Kata).
+This kata is based on the [Device Driver Kata](https://github.com/emilybache/Device-Driver-Kata) by [Emily Bache](https://github.com/emilybache). The Java production code is based on [Héctor Hugo Barriuso Matas](https://github.com/hbarriuso) [solution](https://github.com/hbarriuso/Device-Driver-Kata).
