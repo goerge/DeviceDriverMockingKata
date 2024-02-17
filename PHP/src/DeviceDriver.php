@@ -41,6 +41,7 @@ class DeviceDriver
         $start = hrtime(false)[1];
         $this->hardware->write(self::INIT_ADDRESS, self::PROGRAM_COMMAND);
         $this->hardware->write($address, $data);
+
         $readyByte = 0;
         while ((($readyByte = $this->read(self::INIT_ADDRESS)) & self::READY_MASK) == 0) {
             if ($readyByte != self::READY_NO_ERROR) {
@@ -59,6 +60,7 @@ class DeviceDriver
                 throw new TimeoutException("Timeout when trying to read data from memory");
             }
         }
+
         $actual = $this->read($address);
         if ($data != $actual) {
             throw new ReadFailureException("Failed to read data from memory");
