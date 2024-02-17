@@ -31,12 +31,12 @@ class DeviceDriver
         $this->hardware = $hardware;
     }
 
-    public function read($address)
+    public function read(int $address): int
     {
         return $this->hardware->read($address);
     }
 
-    public function write($address, $data)
+    public function write(int $address, int $data): void
     {
         $start = hrtime(false)[1];
         $this->hardware->write(self::INIT_ADDRESS, self::PROGRAM_COMMAND);
