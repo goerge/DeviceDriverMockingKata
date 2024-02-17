@@ -10,7 +10,7 @@ namespace DeviceDriver;
  */
 interface FlashMemoryDevice
 {
-    function read($address);
+    public function read(int $address): int;
 
-    function write($address, $data);
+    public function write(int $address, int $data): void;
 }
