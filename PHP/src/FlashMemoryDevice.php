@@ -10,7 +10,16 @@ namespace DeviceDriver;
  */
 interface FlashMemoryDevice
 {
+    /**
+     * @param int $address
+     * @return int
+     */
     public function read(int $address): int;
 
+    /**
+     * @param int $address
+     * @param int $data
+     * @return void
+     */
     public function write(int $address, int $data): void;
 }
