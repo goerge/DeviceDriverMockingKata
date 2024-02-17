@@ -1,5 +1,6 @@
 <?php
-namespace Test;
+
+namespace Tests;
 
 use DeviceDriver\DeviceDriver;
 use DeviceDriver\FlashMemoryDevice;
