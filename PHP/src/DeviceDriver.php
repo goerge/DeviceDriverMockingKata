@@ -1,9 +1,12 @@
 <?php
+
+declare(strict_types=1);
+
 namespace DeviceDriver;
 
 /**
  * This class is used by the operating system to interact
- * with the hardware 'FlashMemoryDevice'.
+ * with the hardware 'FlashMemoryDevice'. @see FlashMemoryDevice
  */
 class DeviceDriver
 {
@@ -28,16 +31,17 @@ class DeviceDriver
         $this->hardware = $hardware;
     }
 
-    public function read($address)
+    public function read(int $address): int
     {
         return $this->hardware->read($address);
     }
 
-    public function write($address, $data)
+    public function write(int $address, int $data): void
     {
         $start = hrtime(false)[1];
         $this->hardware->write(self::INIT_ADDRESS, self::PROGRAM_COMMAND);
         $this->hardware->write($address, $data);
+
         $readyByte = 0;
         while ((($readyByte = $this->read(self::INIT_ADDRESS)) & self::READY_MASK) == 0) {
             if ($readyByte != self::READY_NO_ERROR) {
@@ -56,6 +60,7 @@ class DeviceDriver
                 throw new TimeoutException("Timeout when trying to read data from memory");
             }
         }
+
         $actual = $this->read($address);
         if ($data != $actual) {
             throw new ReadFailureException("Failed to read data from memory");

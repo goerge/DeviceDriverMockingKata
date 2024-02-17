@@ -1,4 +1,5 @@
 <?php
+
 namespace DeviceDriver;
 
 /**
@@ -9,7 +10,16 @@ namespace DeviceDriver;
  */
 interface FlashMemoryDevice
 {
-    function read($address);
+    /**
+     * @param int $address
+     * @return int
+     */
+    public function read(int $address): int;
 
-    function write($address, $data);
+    /**
+     * @param int $address
+     * @param int $data
+     * @return void
+     */
+    public function write(int $address, int $data): void;
 }
