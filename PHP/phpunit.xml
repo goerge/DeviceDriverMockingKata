@@ -21,8 +21,8 @@
 
     <testsuites>
         <testsuite name="All Tests">
-            <directory suffix="_test.php">test</directory>
-            <directory suffix="Test.php">test</directory>
+            <directory suffix="_test.php">tests</directory>
+            <directory suffix="Test.php">tests</directory>
         </testsuite>
     </testsuites>
 
